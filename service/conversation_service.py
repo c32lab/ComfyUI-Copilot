@@ -225,7 +225,7 @@ async def upload_to_oss(file_data: bytes, filename: str) -> str:
     # Return the URL of the uploaded file
     pass
 
-@server.PromptServer.instance.routes.post("/api/chat/invoke")
+@server.PromptServer.instance.routes.post("/chat/invoke")
 async def invoke_chat(request):
     data = await request.json()
     session_id = data['session_id']

@@ -24,7 +24,7 @@ import JSEncrypt from 'jsencrypt';
  */
 export async function fetchRsaPublicKey(): Promise<string> {
   try {
-    const response = await fetch(`${config.apiBaseUrl}/api/chat/rsa_public_key`);
+    const response = await fetch(`${config.apiBaseUrl}/chat/rsa_public_key`);
     const result = await response.json();
     
     if (!result.success) {
@@ -135,7 +135,7 @@ export async function verifyOpenAiApiKey(apiKey: string, baseUrl: string, public
     const encryptedApiKey = await encryptWithRsaPublicKey(apiKey, publicKey);
     
     // Call the verification endpoint
-    const response = await fetch(`${config.apiBaseUrl}/api/chat/verify_openai_key`, {
+    const response = await fetch(`${config.apiBaseUrl}/chat/verify_openai_key`, {
       method: 'GET',
       headers: {
         'Encrypted-Openai-Api-Key': encryptedApiKey,

@@ -57,7 +57,7 @@ export namespace WorkflowChatAPI {
       const apiKey = getApiKey();
       const browserLanguage = getBrowserLanguage();
       request.session_id = localStorage.getItem("sessionId") || null;
-      fetch(`${BASE_URL}/api/chat/track_event`, {
+      fetch(`${BASE_URL}/chat/track_event`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -154,7 +154,7 @@ export namespace WorkflowChatAPI {
         });
       }
       
-      const response = await fetch(`${BASE_URL}/api/chat/invoke`, {
+      const response = await fetch(`${BASE_URL}/chat/invoke`, {
         method: 'POST',
         headers,
         body: JSON.stringify({
@@ -251,7 +251,7 @@ export namespace WorkflowChatAPI {
         }
       }
       
-      const response = await fetch(`${BASE_URL}/api/chat/get_optimized_workflow`, {
+      const response = await fetch(`${BASE_URL}/chat/get_optimized_workflow`, {
         method: 'POST',
         headers,
         body: JSON.stringify({
@@ -301,7 +301,7 @@ export namespace WorkflowChatAPI {
       }
     }
     
-    const response = await fetch(`${BASE_URL}/api/chat/get_node_info_by_types`, {
+    const response = await fetch(`${BASE_URL}/chat/get_node_info_by_types`, {
       method: 'POST',
       headers,
       body: JSON.stringify({ 
@@ -352,7 +352,7 @@ export namespace WorkflowChatAPI {
         }
       }
       
-      const response = await fetch(`${BASE_URL}/api/chat/get_messages_by_session_id?session_id=${sessionId}`, {
+      const response = await fetch(`${BASE_URL}/chat/get_messages_by_session_id?session_id=${sessionId}`, {
         method: 'GET',
         headers,
       });
@@ -420,7 +420,7 @@ export namespace WorkflowChatAPI {
         }
       }
       
-      const response = await fetch(`${BASE_URL}/api/chat/announcement`, {
+      const response = await fetch(`${BASE_URL}/chat/announcement`, {
         method: 'GET',
         headers,
       });
